@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #0073e6;
+    padding: 20px 0;
+    text-align: center;
+    color: white;
+}
+
+header h1 {
+    font-size: 36px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 10px 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+section {
+    padding: 40px 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.about-section .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.research-section, .experience-section, .projects-section {
+    background-color: #fff;
+    padding: 40px 0;
+    border-top: 1px solid #ddd;
+}
+
+ul {
+    list-style-type: square;
+    margin-left: 40px;
+}
+
+li {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.contact-section {
+    background-color: #0073e6;
+    color: white;
+    padding: 40px 0;
+}
+
+.contact-section form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-section input, .contact-section textarea {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+}
+
+.contact-section button {
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #0073e6;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
