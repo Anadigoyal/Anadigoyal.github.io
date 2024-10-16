@@ -17,7 +17,7 @@
                     <li><a href="#research">Research</a></li>
                     <li><a href="#experience">Academic Experience</a></li>
                     <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -27,8 +27,10 @@
         <div class="container">
             <h2>About Me</h2>
             <div class="content">
-                <img src="images/profile.jpg" alt="Your Photo" class="profile-image">
-                <p>Hello! I am Dr. [Your Name], a researcher in the field of [Your Field of Expertise]. My research focuses on [Research Focus] and I have worked extensively on [Key Research Areas].</p>
+                <!-- <img src="images/profile.jpg" alt="Your Photo" class="profile-image"> -->
+                <p>Hello!
+                    I am a final-year undergraduate student at the Indian Institute of Technology Jodhpur (IITJ), pursuing a Bachelor’s degree in Mechanical Engineering. I am also an undergraduate researcher in the Department of Computer Science and Engineering, advised by <a href="http://home.iitj.ac.in/~palashdas/" target="_blank">Dr. Palash Das</a>. My research focuses on designing custom hardware accelerators for AI models, as well as exploring techniques to enhance the security of these models against adversarial attacks. I am passionate about hardware-software co-design and optimizing machine learning models for efficient and secure deployment. Additionally, I am also exploring heterogeneous quantum-classical accelerators to accelerate Large Vision models like Vision Transformers through quantum circuits and classical optimization techniques.
+                </p>
             </div>
         </div>
     </section>
@@ -36,58 +38,109 @@
     <section id="research" class="research-section">
         <div class="container">
             <h2>Research</h2>
-            <p>My research encompasses various domains including [List Research Topics]. Below are some highlights of my work:</p>
-            <ul>
-                <li>Paper 1: [Title] - [Description]</li>
-                <li>Paper 2: [Title] - [Description]</li>
-                <li>Paper 3: [Title] - [Description]</li>
-            </ul>
+    
+            <h3>Hardware-Software Co-Design for Efficient Vision Transformer Inference</h3>
+            <p>
+                Vision Transformers (ViTs) excel in global context modeling and outperform conventional models like CNNs in various computer vision tasks, but their high computational demands limit their use on resource-constrained devices. To address this, we developed a hardware-software co-design approach. On the software side, we optimized the ViT algorithm to reduce computations with minimal accuracy loss by pruning less important tokens using a lightweight pruning method. On the hardware side, we built a custom accelerator that exploits parallelism in ViT operations to speed up inference. Two manuscripts based on this research are currently under review, one at ACM Transactions and another at a conference.
+            </p>
+    
+            <h3>Secure Hardware Accelerator for Resilience Against Adversarial Attacks in ViTs</h3>
+            <p>
+                We are developing a secure hardware accelerator to protect Vision Transformers (ViTs) from adversarial attacks—small, malicious input modifications that cause misclassification. While ViTs outperform CNNs in many tasks, they remain vulnerable to these perturbations, posing security risks in real-time applications like autonomous vehicles, surveillance, and medical imaging, where attacks like DeepFool or C&W can reduce model accuracy to 0%. Existing defenses, such as adversarial training, are costly and not generalizable across models. To address this, we are developing a lightweight detection framework and a diffusion-based rectifier to remove adversarial noise while maintaining accuracy. Additionally, we are accelerating this defense with a custom hardware solution deployed on FPGA for efficient real-time performance.
+            </p>
         </div>
     </section>
+    
 
     <section id="experience" class="experience-section">
         <div class="container">
-            <h2>Academic Experience</h2>
+            <h2>Education</h2>
             <ul>
-                <li>Position: [Role], [Institution Name] (Year – Year)</li>
-                <li>Position: [Role], [Institution Name] (Year – Year)</li>
-                <li>Position: [Role], [Institution Name] (Year – Year)</li>
+                <li>
+                    <strong>Indian Institute of Technology Jodhpur</strong> (Dec 2021 – Present) <br>
+                    Bachelor of Technology in Mechanical Engineering <br>
+                    GPA: 7.76
+                </li>
+                <li>
+                    <strong>Surbhi Senior Secondary School</strong> (2020) <br>
+                    Rajasthan Board of Secondary Education (R.B.S.E) <br>
+                    Percentage: 89.6%
+                </li>
             </ul>
         </div>
     </section>
+    
 
     <section id="projects" class="projects-section">
         <div class="container">
             <h2>Projects</h2>
             <ul>
-                <li>Project 1: [Project Title] - [Description]</li>
-                <li>Project 2: [Project Title] - [Description]</li>
-                <li>Project 3: [Project Title] - [Description]</li>
+                <li>
+                    <strong>Hardware Acceleration of Vision Transformers Using Informative Patch Selection</strong> <br>
+                    This project focused on improving the efficiency of Vision Transformers (ViTs) by introducing image-adaptive, lightweight patch selection techniques. We developed a dedicated hardware accelerator, HAVIT, which significantly optimized both the patch selection process and ViT inference. <br>
+                    <strong>Key Contributions:</strong>
+                    <ul>
+                        <li>Developed adaptive patch selection algorithms that reduce computation without sacrificing accuracy.</li>
+                        <li>Designed and implemented an ASIC accelerator (HAVIT) to support both patch selection and ViT operations.</li>
+                    </ul>
+                    <!-- <strong>Outcome:</strong> Significant improvements in both acceleration efficiency and accuracy were achieved. The results have been submitted to a journal for review. -->
+                </li>
+                
+                <li>
+                    <strong>Accelerating Vision Transformers with a Hybrid Token Selection Approach on FPGAs</strong> <br>
+                    In this project, we explored token pruning techniques to accelerate Vision Transformers on FPGAs. By introducing a hybrid token selection method that combines attention-based and feature-based approaches, we reduced computational overhead while maintaining accuracy. <br>
+                    <strong>Key Contributions:</strong>
+                    <ul>
+                        <li>Optimized the placement of token selectors in ViT, balancing accuracy and computational cost.</li>
+                        <li>Proposed a novel hybrid method for multi-stage token pruning, combining early feature-based pruning with attention-based methods for later layers.</li>
+                        <li>Designed and implemented an FPGA-based accelerator for ViT and the proposed token pruning method using Vitis HLS and Vivado.</li>
+                    </ul>
+                    <!-- <strong>Outcome:</strong> The implementation led to a 29-40% reduction in execution time with minimal accuracy loss. The findings have been submitted to a conference. -->
+                </li>
+                
+                <li>
+                    <strong>Secure Hardware Accelerator for Resilience Against Adversarial Attacks in ViTs</strong> <br>
+                    <!-- <em>May 2024 – Present | Supervisor: Dr. Palash Das, IIT Jodhpur</em> <br> -->
+                    This project aims to protect Vision Transformers (ViTs) from adversarial attacks by designing both a detection and rectification framework that can run on custom hardware for real-time applications. <br>
+                    <strong>Key Contributions:</strong>
+                    <ul>
+                        <li>Designed a lightweight detection algorithm for identifying adversarial images in classification tasks.</li>
+                        <li>Developed a diffusion-based rectifier algorithm to eliminate adversarial noise from input images.</li>
+                        <li>Implemented a custom FPGA-based hardware accelerator for real-time detection and rectification.</li>
+                        <li>Tested the system against white-box and black-box adversarial attacks, evaluating its robustness.</li>
+                    </ul>
+                    <!-- <strong>Outcome:</strong> The system improved the resilience of ViTs with minimal overhead. A manuscript is being prepared for journal submission. -->
+                </li>
+    
+                <li>
+                    <strong>Enhancing Vision Transformers with a Heterogeneous Quantum-Classical Accelerator</strong> <br>
+                    <!-- <em>Sept 2024 – Present | Supervisors: Dr. Palash Das, Dr. Asif Ekbal, and Dr. Bikash Santra, IIT Jodhpur</em> <br> -->
+                    This ongoing project explores how quantum computing can be leveraged to accelerate certain layers of Vision Transformers (ViTs). The approach involves combining quantum circuits with classical optimization techniques. <br>
+                    <strong>Key Contributions:</strong>
+                    <ul>
+                        <li>Developed quantum circuits to accelerate the execution of specific layers in the Vision Transformer architecture.</li>
+                        <li>Utilized classical optimization techniques to minimize the time required for quantum state preparation and layer execution, enhancing overall efficiency.</li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </section>
+    
 
     <section id="contact" class="contact-section">
-        <div class="container">
-            <h2>Contact Us</h2>
-            <form action="mailto:your-email@example.com" method="post" enctype="text/plain">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-                
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" required></textarea>
-                
-                <button type="submit">Send</button>
-            </form>
+        <div class="container text-center">
+            <h2>Contact</h2>
+            <p>Email: <a href="mailto:goyal.24@iitj.ac.in">goyal.24@iitj.ac.in</a></p>
+            <p>Github: <a href="https://github.com/Anadigoyal" target="_blank">https://github.com/Anadigoyal</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/anadi-goyal-691a97252/" target="_blank">https://www.linkedin.com/in/anadi-goyal-691a97252/</a></p>
         </div>
     </section>
-
+    
+    
+    
     <footer>
         <div class="container">
-            <p>&copy; 2024 Dr. [Your Name] | All Rights Reserved</p>
+            <p>&copy; 2024 Anadi Goyal | All Rights Reserved</p>
         </div>
     </footer>
 </body>
