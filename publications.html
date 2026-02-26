@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Publications — Anadi Goyal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root { --bg: #fafaf8; --text: #1a1a18; --muted: #6b6b65; --accent: #2d5a8e; --border: #e0e0d8; --light: #f0f0eb; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'EB Garamond', Georgia, serif; background: var(--bg); color: var(--text); font-size: 18px; line-height: 1.7; }
+  nav { position: fixed; top: 0; left: 0; right: 0; background: var(--bg); border-bottom: 1px solid var(--border); z-index: 100; padding: 0 max(2rem, 5vw); display: flex; align-items: center; justify-content: space-between; height: 56px; }
+  .nav-name { font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.05em; color: var(--text); text-decoration: none; font-weight: 500; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+  main { max-width: 760px; margin: 0 auto; padding: 100px 2rem 80px; }
+  .page-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; }
+  .page-title { font-size: 2rem; font-weight: 500; margin-bottom: 0.75rem; }
+  .page-intro { color: var(--muted); margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+
+  .year-section { margin-bottom: 2.5rem; }
+  .year-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  .year-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+  .pub-entry {
+    margin-bottom: 1.8rem;
+    padding-left: 1.5rem;
+    border-left: 2px solid var(--border);
+    transition: border-color 0.2s;
+  }
+  .pub-entry:hover { border-left-color: var(--accent); }
+
+  .pub-title {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.4;
+    margin-bottom: 0.3rem;
+  }
+  .pub-authors {
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin-bottom: 0.25rem;
+    font-style: italic;
+  }
+  .pub-authors .self { font-style: normal; font-weight: 500; color: var(--text); }
+  .pub-venue {
+    font-size: 0.9rem;
+    color: var(--text);
+    margin-bottom: 0.4rem;
+  }
+  .pub-venue em { font-style: italic; }
+  .pub-meta { display: flex; gap: 0.8rem; align-items: center; flex-wrap: wrap; }
+  .pub-status {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.15rem 0.5rem;
+    border-radius: 2px;
+  }
+  .status-accepted { background: #e6f4ea; color: #2a7a3b; }
+  .status-review { background: #fff3e0; color: #b35c00; }
+  .pub-link {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+  }
+  .pub-link:hover { border-bottom-color: var(--accent); }
+
+  footer { max-width: 760px; margin: 0 auto; padding: 0 2rem 3rem; border-top: 1px solid var(--border); padding-top: 1.5rem; }
+  footer p { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--muted); }
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-name" href="index.html">Anadi Goyal</a>
+  <ul class="nav-links">
+    <li><a href="index.html">About</a></li>
+    <li><a href="research.html">Research</a></li>
+    <li><a href="publications.html" class="active">Publications</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="cv.html">CV</a></li>
+  </ul>
+</nav>
+
+<main>
+  <div class="page-label">Publications</div>
+  <h1 class="page-title">Publications</h1>
+  <p class="page-intro">* denotes equal contribution.</p>
+
+  <div class="year-section">
+    <div class="year-label">2026</div>
+
+    <div class="pub-entry">
+      <div class="pub-title">STRAP-ViT: Segregated Tokens with Randomized-Transformations for Defense against Adversarial Patches in ViTs</div>
+      <div class="pub-authors">Nandish Chattopadhyay, <span class="self">Anadi Goyal</span>, Anupam Chattopadhyay, and Chandan Karfa</div>
+      <div class="pub-venue"><em>Design Automation Conference (DAC)</em>, 2026</div>
+      <div class="pub-meta"><span class="pub-status status-accepted">Accepted</span></div>
+    </div>
+  </div>
+
+  <div class="year-section">
+    <div class="year-label">2025</div>
+
+    <div class="pub-entry">
+      <div class="pub-title">Adversarial Efficiency Degradation for Vision Transformer by Exploiting Input-adaptive Optimization: A Survey</div>
+      <div class="pub-authors"><span class="self">Anadi Goyal</span>, Nandish Chattopadhyay, Anupam Chattopadhyay, and Chandan Karfa</div>
+      <div class="pub-venue"><em>Artificial Intelligence and Internet of Things (AIIoT)</em>, 2025</div>
+      <div class="pub-meta"><span class="pub-status status-accepted">Accepted</span></div>
+    </div>
+
+    <div class="pub-entry">
+      <div class="pub-title">HAVIT: An Efficient Hardware-Accelerator for Vision Transformer with Informative Patch Selection Techniques</div>
+      <div class="pub-authors"><span class="self">Anadi Goyal</span>, Gaurav Sangwan, Aradhya Patel, and Palash Das</div>
+      <div class="pub-venue"><em>ACM Transactions on Architecture and Code Optimization (ACM TACO)</em>, 2025</div>
+      <div class="pub-meta">
+        <span class="pub-status status-accepted">Accepted</span>
+        <a class="pub-link" href="#">[Paper]</a>
+      </div>
+    </div>
+
+    <div class="pub-entry">
+      <div class="pub-title">Enhanced Prefetching via Dynamic Multi-Step SARSA based Reinforcement Learning</div>
+      <div class="pub-authors">Satyaswaroop Nayak, <span class="self">Anadi Goyal</span>, Sheel Sindhu Manohar, Dip Sankar Banerjee, and Palash Das</div>
+      <div class="pub-venue"><em>IEEE Embedded Systems Letters (ESL)</em>, 2025</div>
+      <div class="pub-meta">
+        <span class="pub-status status-accepted">Accepted</span>
+        <a class="pub-link" href="#">[Paper]</a>
+      </div>
+    </div>
+
+    <div class="pub-entry">
+      <div class="pub-title">Hybrid Token Selector based Accelerator for ViTs</div>
+      <div class="pub-authors">Akshansh Yadav*, <span class="self">Anadi Goyal</span>*, and Palash Das</div>
+      <div class="pub-venue"><em>Design, Automation and Test in Europe (DATE)</em>, IEEE, 2025</div>
+      <div class="pub-meta">
+        <span class="pub-status status-accepted">Accepted</span>
+        <a class="pub-link" href="#">[Paper]</a>
+        <a class="pub-link" href="#">[Presentation]</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="year-section">
+    <div class="year-label">Under Review</div>
+
+    <div class="pub-entry">
+      <div class="pub-title">Secure Hardware Accelerator for Resilience Against Adversarial Attacks in ViTs</div>
+      <div class="pub-authors">Deepraj Majumdar, <span class="self">Anadi Goyal</span>, Sparsh Mittal, Shirshendu Das, and Palash Das</div>
+      <div class="pub-venue"><em>IEEE Transactions on Computers (TC)</em></div>
+      <div class="pub-meta"><span class="pub-status status-review">Under Review — Final Round</span></div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>Anadi Goyal · IIT Guwahati · anadigoyal05@gmail.com</p>
+</footer>
+</body>
+</html>
