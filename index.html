@@ -87,18 +87,17 @@
     width: 140px;
     height: 140px;
     border-radius: 4px;
-    object-fit: cover;
     background: var(--light);
     flex-shrink: 0;
     border: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    color: var(--muted);
-    text-align: center;
-    padding: 8px;
+    overflow: hidden;
+  }
+  .about-photo img {
+    width: 140px;
+    height: 140px;
+    border-radius: 4px;
+    object-fit: cover;
+    display: block;
   }
   .about-intro h1 {
     font-family: 'EB Garamond', serif;
@@ -201,6 +200,7 @@
   @media (max-width: 600px) {
     .about-header { flex-direction: column; }
     .about-photo { width: 100px; height: 100px; }
+    .about-photo img { width: 100px; height: 100px; }
     .edu-entry { flex-direction: column; gap: 0.2rem; }
   }
 </style>
@@ -223,15 +223,16 @@
 
   <div class="about-header">
     <div class="about-photo">
-       <img src="photo1.jpg" alt="Anadi Goyal">
+      <!-- Replace with: <img src="photo.jpg" alt="Anadi Goyal"> -->
+      photo.jpg
     </div>
     <div class="about-intro">
       <h1>Anadi Goyal</h1>
       <p class="position">Research Assistant</p>
       <p class="institution">Dept. of CSE, IIT Guwahati</p>
       <div class="about-links">
-        <a href="mailto:anadigoyal05@gmail.com">anadigoyal05@gmail.com</a>
-        <a href="mailto:anadigoyal@rnd.iitg.ac.in">anadigoyal@rnd.iitg.ac.in</a>
+        <a href="/cdn-cgi/l/email-protection#e98887888d808e86908885d9dca98e84888085c78a8684"><span class="__cf_email__" data-cfemail="9cfdf2fdf8f5fbf3e5fdf0aca9dcfbf1fdf5f0b2fff3f1">[email&#160;protected]</span></a>
+        <a href="/cdn-cgi/l/email-protection#24454a45404d434b5d454864564a400a4d4d50430a45470a4d4a"><span class="__cf_email__" data-cfemail="26474847424f41495f474a66544842084f4f5241084745084f48">[email&#160;protected]</span></a>
         <a href="https://anadigoyal.github.io" target="_blank">Website</a>
         <a href="https://github.com/anadigoyal" target="_blank">GitHub</a>
       </div>
@@ -289,13 +290,4 @@
     <p><span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--accent);">Feb 2026</span> — Paper accepted at Design Automation Conference (DAC) 2026: STRAP-ViT.</p>
     <p><span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--accent);">2025</span> — Paper accepted at ACM TACO: HAVIT hardware accelerator for Vision Transformers.</p>
     <p><span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--accent);">2025</span> — Paper accepted at DATE 2025, IEEE. Received IEEE CEDA grant of ₹1,30,000 ($1500) to present in France.</p>
-    <p><span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--accent);">2025</span> — Paper accepted at IEEE Embedded Systems Letters (ESL) on RL-based prefetching.</p>
-  </div>
-</main>
-
-<footer>
-  <p>Anadi Goyal · IIT Guwahati · anadigoyal05@gmail.com</p>
-</footer>
-
-</body>
-</html>
+    <p><span style="font
