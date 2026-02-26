@@ -1,151 +1,302 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Academic Research Website</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anadi Goyal — Research Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fafaf8;
+    --text: #1a1a18;
+    --muted: #6b6b65;
+    --accent: #2d5a8e;
+    --border: #e0e0d8;
+    --light: #f0f0eb;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'EB Garamond', Georgia, serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 18px;
+    line-height: 1.7;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    z-index: 100;
+    padding: 0 max(2rem, 5vw);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+  }
+  .nav-name {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+
+  /* LAYOUT */
+  main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 100px 2rem 80px;
+  }
+
+  /* PAGE HEADER */
+  .page-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+  }
+
+  /* ABOUT */
+  .about-header {
+    display: flex;
+    gap: 2.5rem;
+    align-items: flex-start;
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .about-photo {
+    width: 140px;
+    height: 140px;
+    border-radius: 4px;
+    object-fit: cover;
+    background: var(--light);
+    flex-shrink: 0;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    text-align: center;
+    padding: 8px;
+  }
+  .about-intro h1 {
+    font-family: 'EB Garamond', serif;
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: 0.4rem;
+  }
+  .about-intro .position {
+    font-size: 1rem;
+    color: var(--muted);
+    margin-bottom: 0.2rem;
+  }
+  .about-intro .institution {
+    font-size: 0.95rem;
+    color: var(--muted);
+  }
+  .about-links {
+    display: flex;
+    gap: 1.2rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+  }
+  .about-links a {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+  }
+  .about-links a:hover { border-bottom-color: var(--accent); }
+
+  /* SECTIONS */
+  .section { margin-bottom: 3rem; }
+  .section h2 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .section p { margin-bottom: 1rem; color: #333; }
+  .section p:last-child { margin-bottom: 0; }
+
+  /* INTERESTS */
+  .interests-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+  }
+  .interests-list li {
+    background: var(--light);
+    border: 1px solid var(--border);
+    padding: 0.3rem 0.8rem;
+    font-size: 0.85rem;
+    font-family: 'JetBrains Mono', monospace;
+    border-radius: 2px;
+    color: var(--text);
+  }
+
+  /* EDUCATION */
+  .edu-entry {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 1rem;
+    gap: 1rem;
+  }
+  .edu-left {}
+  .edu-degree { font-size: 1rem; font-weight: 500; }
+  .edu-school { font-size: 0.9rem; color: var(--muted); }
+  .edu-right {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    white-space: nowrap;
+    text-align: right;
+  }
+
+  /* FOOTER */
+  footer {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 2rem 3rem;
+    border-top: 1px solid var(--border);
+    padding-top: 1.5rem;
+  }
+  footer p {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+  }
+
+  @media (max-width: 600px) {
+    .about-header { flex-direction: column; }
+    .about-photo { width: 100px; height: 100px; }
+    .edu-entry { flex-direction: column; gap: 0.2rem; }
+  }
+</style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Anadi Goyal</h1>
-            <nav>
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#research">Research</a></li>
-                    <li><a href="#experience">Academic Experience</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
 
-    <section id="about" class="about-section">
-        <div class="container">
-            <h2>About Me</h2>
-            <div class="content">
-                <!-- <img src="images/profile.jpg" alt="Your Photo" class="profile-image"> -->
-                <p>Hello!
-                    I am a Research Assistant in the Department of Computer Science & Engineering at IIT Guwahati, supervised by 
-  <a href="https://www.iitg.ac.in/ckarfa/" target="_blank" rel="noopener">Prof. Chandan Karfa</a> with co-guidance from 
-  <a href="https://www.ntu.edu.sg/research/faculty-directory/detail/rp01076" target="_blank" rel="noopener">Prof. Anupam Chattopadhyay (NTU)</a>. 
-  I completed my undergraduate studies (B.Tech.) at the Indian Institute of Technology Jodhpur (IITJ), where I was an undergraduate researcher in the Department of Computer Science & Engineering advised by 
-  <a href="http://home.iitj.ac.in/~palashdas/" target="_blank" rel="noopener">Dr. Palash Das</a>. My research focuses on designing custom hardware accelerators for AI models, as well as exploring techniques to enhance the security of these models against adversarial attacks. I am passionate about hardware-software co-design and optimizing machine learning models for efficient and secure deployment.
-                </p>
-            </div>
-        </div>
-    </section>
+<nav>
+  <a class="nav-name" href="index.html">Anadi Goyal</a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">About</a></li>
+    <li><a href="research.html">Research</a></li>
+    <li><a href="publications.html">Publications</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="cv.html">CV</a></li>
+  </ul>
+</nav>
 
-    <section id="research" class="research-section">
-        <div class="container">
-            <h2>Research</h2>
-    
-            <h3>Hardware-Software Co-Design for Efficient Vision Transformer Inference</h3>
-            <p>
-                Vision Transformers (ViTs) excel in global context modeling and outperform conventional models like CNNs in various computer vision tasks, but their high computational demands limit their use on resource-constrained devices. To address this, we developed a hardware-software co-design approach. On the software side, we optimized the ViT algorithm to reduce computations with minimal accuracy loss by pruning less important tokens using a lightweight pruning method. On the hardware side, we built a custom accelerator that exploits parallelism in ViT operations to speed up inference. Two manuscripts based on this research are currently under review, one at ACM Transactions and another at a conference.
-            </p>
-    
-            <h3>Secure Hardware Accelerator for Resilience Against Adversarial Attacks in ViTs</h3>
-            <p>
-                We are developing a secure hardware accelerator to protect Vision Transformers (ViTs) from adversarial attacks—small, malicious input modifications that cause misclassification. While ViTs outperform CNNs in many tasks, they remain vulnerable to these perturbations, posing security risks in real-time applications like autonomous vehicles, surveillance, and medical imaging, where attacks like DeepFool or C&W can reduce model accuracy to 0%. Existing defenses, such as adversarial training, are costly and not generalizable across models. To address this, we are developing a lightweight detection framework and a diffusion-based rectifier to remove adversarial noise while maintaining accuracy. Additionally, we are accelerating this defense with a custom hardware solution deployed on FPGA for efficient real-time performance.
-            </p>
-        </div>
-    </section>
-    
+<main>
+  <div class="page-label">About</div>
 
-    <section id="experience" class="experience-section">
-        <div class="container">
-            <h2>Education</h2>
-            <ul>
-                <li>
-                    <strong>Indian Institute of Technology Jodhpur</strong> (Dec 2021 – Present) <br>
-                    Bachelor of Technology in Mechanical Engineering <br>
-                    GPA: 7.80
-                </li>
-                <li>
-                    <strong>Surbhi Senior Secondary School</strong> (2020) <br>
-                    Rajasthan Board of Secondary Education (R.B.S.E) <br>
-                    Percentage: 89.6%
-                </li>
-            </ul>
-        </div>
-    </section>
-    
+  <div class="about-header">
+    <div class="about-photo">
+      <!-- Replace with: <img src="photo.jpg" alt="Anadi Goyal"> -->
+      photo.jpg
+    </div>
+    <div class="about-intro">
+      <h1>Anadi Goyal</h1>
+      <p class="position">Research Assistant</p>
+      <p class="institution">Dept. of CSE, IIT Guwahati</p>
+      <div class="about-links">
+        <a href="mailto:anadigoyal05@gmail.com">anadigoyal05@gmail.com</a>
+        <a href="mailto:anadigoyal@rnd.iitg.ac.in">anadigoyal@rnd.iitg.ac.in</a>
+        <a href="https://anadigoyal.github.io" target="_blank">Website</a>
+        <a href="https://github.com/anadigoyal" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </div>
 
-    <section id="projects" class="projects-section">
-        <div class="container">
-            <h2>Projects</h2>
-            <ul>
-                <li>
-                    <strong>Hardware Acceleration of Vision Transformers Using Informative Patch Selection</strong> <br>
-                    This project focused on improving the efficiency of Vision Transformers (ViTs) by introducing image-adaptive, lightweight patch selection techniques. We developed a dedicated hardware accelerator, HAVIT, which significantly optimized both the patch selection process and ViT inference. <br>
-                    <strong>Key Contributions:</strong>
-                    <ul>
-                        <li>Developed adaptive patch selection algorithms that reduce computation without sacrificing accuracy.</li>
-                        <li>Designed and implemented an ASIC accelerator (HAVIT) to support both patch selection and ViT operations.</li>
-                    </ul>
-                    <!-- <strong>Outcome:</strong> Significant improvements in both acceleration efficiency and accuracy were achieved. The results have been submitted to a journal for review. -->
-                </li>
-                
-                <li>
-                    <strong>Accelerating Vision Transformers with a Hybrid Token Selection Approach on FPGAs</strong> <br>
-                    In this project, we explored token pruning techniques to accelerate Vision Transformers on FPGAs. By introducing a hybrid token selection method that combines attention-based and feature-based approaches, we reduced computational overhead while maintaining accuracy. <br>
-                    <strong>Key Contributions:</strong>
-                    <ul>
-                        <li>Optimized the placement of token selectors in ViT, balancing accuracy and computational cost.</li>
-                        <li>Proposed a novel hybrid method for multi-stage token pruning, combining early feature-based pruning with attention-based methods for later layers.</li>
-                        <li>Designed and implemented an FPGA-based accelerator for ViT and the proposed token pruning method using Vitis HLS and Vivado.</li>
-                    </ul>
-                    <!-- <strong>Outcome:</strong> The implementation led to a 29-40% reduction in execution time with minimal accuracy loss. The findings have been submitted to a conference. -->
-                </li>
-                
-                <li>
-                    <strong>Secure Hardware Accelerator for Resilience Against Adversarial Attacks in ViTs</strong> <br>
-                    <!-- <em>May 2024 – Present | Supervisor: Dr. Palash Das, IIT Jodhpur</em> <br> -->
-                    This project aims to protect Vision Transformers (ViTs) from adversarial attacks by designing both a detection and rectification framework that can run on custom hardware for real-time applications. <br>
-                    <strong>Key Contributions:</strong>
-                    <ul>
-                        <li>Designed a lightweight detection algorithm for identifying adversarial images in classification tasks.</li>
-                        <li>Developed a diffusion-based rectifier algorithm to eliminate adversarial noise from input images.</li>
-                        <li>Implemented a custom FPGA-based hardware accelerator for real-time detection and rectification.</li>
-                        <li>Tested the system against white-box and black-box adversarial attacks, evaluating its robustness.</li>
-                    </ul>
-                    <!-- <strong>Outcome:</strong> The system improved the resilience of ViTs with minimal overhead. A manuscript is being prepared for journal submission. -->
-                </li>
-    
-                <li>
-                    <strong>Enhancing Vision Transformers with a Heterogeneous Quantum-Classical Accelerator</strong> <br>
-                    <!-- <em>Sept 2024 – Present | Supervisors: Dr. Palash Das, Dr. Asif Ekbal, and Dr. Bikash Santra, IIT Jodhpur</em> <br> -->
-                    This ongoing project explores how quantum computing can be leveraged to accelerate certain layers of Vision Transformers (ViTs). The approach involves combining quantum circuits with classical optimization techniques. <br>
-                    <strong>Key Contributions:</strong>
-                    <ul>
-                        <li>Developed quantum circuits to accelerate the execution of specific layers in the Vision Transformer architecture.</li>
-                        <li>Utilized classical optimization techniques to minimize the time required for quantum state preparation and layer execution, enhancing overall efficiency.</li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </section>
-    
+  <div class="section">
+    <h2>Bio</h2>
+    <p>
+      I am a Research Assistant in the Department of Computer Science &amp; Engineering at IIT Guwahati, 
+      supervised by Prof. Chandan Karfa with co-guidance from Prof. Anupam Chattopadhyay (NTU Singapore). 
+      I completed my B.Tech. at the Indian Institute of Technology Jodhpur (IITJ), where I was an 
+      undergraduate researcher in the Department of Computer Science &amp; Engineering advised by Dr. Palash Das.
+    </p>
+    <p>
+      My research focuses on designing custom hardware accelerators for AI models, as well as exploring 
+      techniques to enhance the security of these models against adversarial attacks. I am passionate about 
+      hardware-software co-design and optimizing machine learning models for efficient and secure deployment.
+    </p>
+  </div>
 
-    <section id="contact" class="contact-section">
-        <div class="container text-center">
-            <h2>Contact</h2>
-            <p>Email: <a href="mailto:goyal.24@iitj.ac.in">goyal.24@iitj.ac.in</a></p>
-            <p>Github: <a href="https://github.com/Anadigoyal" target="_blank">https://github.com/Anadigoyal</a></p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/anadi-goyal-691a97252/" target="_blank">https://www.linkedin.com/in/anadi-goyal-691a97252/</a></p>
-        </div>
-    </section>
-    
-    
-    
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Anadi Goyal | All Rights Reserved</p>
-        </div>
-    </footer>
+  <div class="section">
+    <h2>Research Interests</h2>
+    <ul class="interests-list">
+      <li>Efficient AI Inference</li>
+      <li>Hardware Acceleration of Deep Learning</li>
+      <li>Adversarial Robustness</li>
+      <li>AI Security</li>
+      <li>Hardware-Software Co-Design</li>
+      <li>Vision Transformers</li>
+      <li>FPGA/ASIC Design</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Education</h2>
+    <div class="edu-entry">
+      <div class="edu-left">
+        <div class="edu-degree">B.Tech. in Mechanical Engineering</div>
+        <div class="edu-school">Indian Institute of Technology Jodhpur</div>
+      </div>
+      <div class="edu-right">Dec 2021 – June 2025<br>GPA: 7.81</div>
+    </div>
+    <div class="edu-entry">
+      <div class="edu-left">
+        <div class="edu-degree">Senior Secondary</div>
+        <div class="edu-school">Surbhi Senior Secondary School, RBSE</div>
+      </div>
+      <div class="edu-right">2020<br>89.6%</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>News</h2>
+    <p><span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--accent);">Feb 2026</span> — Paper accepted at Design Automation Conference (DAC) 2026: STRAP-ViT.</p>
+    <p><span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--accent);">2025</span> — Paper accepted at ACM TACO: HAVIT hardware accelerator for Vision Transformers.</p>
+    <p><span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--accent);">2025</span> — Paper accepted at DATE 2025, IEEE. Received IEEE CEDA grant of ₹1,30,000 ($1500) to present in France.</p>
+    <p><span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--accent);">2025</span> — Paper accepted at IEEE Embedded Systems Letters (ESL) on RL-based prefetching.</p>
+  </div>
+</main>
+
+<footer>
+  <p>Anadi Goyal · IIT Guwahati · anadigoyal05@gmail.com</p>
+</footer>
+
 </body>
 </html>
