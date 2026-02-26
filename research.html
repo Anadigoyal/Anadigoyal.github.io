@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Research — Anadi Goyal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fafaf8; --text: #1a1a18; --muted: #6b6b65;
+    --accent: #2d5a8e; --border: #e0e0d8; --light: #f0f0eb;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'EB Garamond', Georgia, serif; background: var(--bg); color: var(--text); font-size: 18px; line-height: 1.7; }
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    background: var(--bg); border-bottom: 1px solid var(--border); z-index: 100;
+    padding: 0 max(2rem, 5vw); display: flex; align-items: center; justify-content: space-between; height: 56px;
+  }
+  .nav-name { font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.05em; color: var(--text); text-decoration: none; font-weight: 500; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+  main { max-width: 760px; margin: 0 auto; padding: 100px 2rem 80px; }
+  .page-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; }
+  .page-title { font-size: 2rem; font-weight: 500; margin-bottom: 0.75rem; }
+  .page-intro { color: var(--muted); margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+
+  .research-block {
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .research-block:last-child { border-bottom: none; }
+
+  .research-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: #e8f0fa;
+    padding: 0.2rem 0.6rem;
+    border-radius: 2px;
+    display: inline-block;
+    margin-bottom: 0.8rem;
+  }
+  .research-block h2 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    line-height: 1.3;
+    margin-bottom: 0.3rem;
+  }
+  .research-period {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    margin-bottom: 1rem;
+  }
+  .research-desc { margin-bottom: 1rem; }
+  .research-desc p { margin-bottom: 0.6rem; }
+
+  .contributions-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+  }
+  .contributions { list-style: none; margin-bottom: 1rem; }
+  .contributions li {
+    padding-left: 1.2rem;
+    position: relative;
+    margin-bottom: 0.3rem;
+    font-size: 0.95rem;
+    color: #444;
+  }
+  .contributions li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--border);
+  }
+
+  .outcome-box {
+    background: var(--light);
+    border-left: 2px solid var(--accent);
+    padding: 0.7rem 1rem;
+    font-size: 0.9rem;
+    color: var(--muted);
+  }
+  .outcome-box strong { color: var(--text); font-weight: 500; }
+
+  footer { max-width: 760px; margin: 0 auto; padding: 0 2rem 3rem; border-top: 1px solid var(--border); padding-top: 1.5rem; }
+  footer p { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--muted); }
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-name" href="index.html">Anadi Goyal</a>
+  <ul class="nav-links">
+    <li><a href="index.html">About</a></li>
+    <li><a href="research.html" class="active">Research</a></li>
+    <li><a href="publications.html">Publications</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="cv.html">CV</a></li>
+  </ul>
+</nav>
+
+<main>
+  <div class="page-label">Research</div>
+  <h1 class="page-title">Research</h1>
+  <p class="page-intro">My work sits at the intersection of hardware design and AI security — building efficient accelerators for deep learning models and hardening them against adversarial threats.</p>
+
+  <!-- Block 1 -->
+  <div class="research-block">
+    <span class="research-tag">Hardware Acceleration</span>
+    <h2>Hardware-Software Co-Design for Efficient ViT Inference</h2>
+    <div class="research-period">Jan 2023 – Sept 2024 · IIT Jodhpur (Advisor: Dr. Palash Das)</div>
+    <div class="research-desc">
+      <p>
+        Vision Transformers (ViTs) achieve state-of-the-art accuracy but are computationally expensive. This
+        research addresses the challenge of deploying ViTs efficiently on dedicated hardware through informative
+        patch/token selection and custom accelerator design.
+      </p>
+    </div>
+    <div class="contributions-title">Key Contributions</div>
+    <ul class="contributions">
+      <li>Proposed lightweight, image-adaptive informative patch selection techniques for efficient yet accurate ViT acceleration.</li>
+      <li>Designed and implemented a dedicated ASIC (HAVIT) to accelerate both patch selection and the full ViT pipeline.</li>
+      <li>Analyzed token selector placement in the ViT architecture, optimizing the accuracy–computation trade-off in attention-based methods.</li>
+      <li>Proposed a feature-based token pruning strategy for early layers, reducing reliance on attention scores.</li>
+      <li>Developed a hybrid multi-stage token pruning methodology, reducing execution time by 29–40% with minimal accuracy loss.</li>
+      <li>Implemented hardware accelerator for ViT backbone on FPGA using Vitis HLS and Vivado.</li>
+    </ul>
+    <div class="outcome-box">
+      <strong>Outcomes:</strong> HAVIT accepted in <em>ACM Transactions on Architecture and Code Optimization (ACM TACO)</em>, 2025. Hybrid token selector accepted as a regular paper at <em>DATE 2025</em>, IEEE.
+    </div>
+  </div>
+
+  <!-- Block 2 -->
+  <div class="research-block">
+    <span class="research-tag">AI Security</span>
+    <h2>Adversarial Robustness of Vision Transformers</h2>
+    <div class="research-period">May 2024 – present · IIT Jodhpur &amp; IIT Guwahati</div>
+    <div class="research-desc">
+      <p>
+        Adversarial attacks pose a serious threat to the real-world deployment of deep learning models.
+        This line of research develops both attack methods and defenses specifically targeting ViTs,
+        with a focus on scenarios where models are optimized for efficient inference on custom hardware.
+      </p>
+    </div>
+    <div class="contributions-title">Key Contributions</div>
+    <ul class="contributions">
+      <li>Developed model-agnostic defenses for adversarial patch attacks on Vision Transformers (STRAP-ViT).</li>
+      <li>Analyzed efficiency-targeted adversarial attacks that exploit input-adaptive optimization strategies in ViTs.</li>
+      <li>Proposed approaches to enhance robustness of optimized/accelerated ViT inference pipelines.</li>
+      <li>Investigating stronger energy-based attacks on efficient AI inference hardware.</li>
+      <li>Working on improving robustness of large language models against jailbreak prompts.</li>
+    </ul>
+    <div class="outcome-box">
+      <strong>Outcomes:</strong> STRAP-ViT accepted at <em>Design Automation Conference (DAC)</em>, 2026. Survey on adversarial efficiency degradation accepted at <em>AIIoT 2025</em>.
+    </div>
+  </div>
+
+  <!-- Block 3 -->
+  <div class="research-block">
+    <span class="research-tag">Secure Hardware</span>
+    <h2>Secure Hardware Accelerator for Resilience Against Adversarial Attacks</h2>
+    <div class="research-period">May 2024 – July 2025 · IIT Jodhpur (Advisor: Dr. Palash Das)</div>
+    <div class="research-desc">
+      <p>
+        This project bridges hardware design and AI security by building a dedicated FPGA-based accelerator
+        that can detect and neutralize adversarial noise in real time, enabling secure ViT deployment in
+        resource-constrained edge settings.
+      </p>
+    </div>
+    <div class="contributions-title">Key Contributions</div>
+    <ul class="contributions">
+      <li>Developing a lightweight rectifier algorithm to eliminate adversarial noise from ViT inputs.</li>
+      <li>Implementing a custom hardware accelerator on FPGA for real-time rectification.</li>
+      <li>Evaluating system performance under white-box and black-box attack scenarios.</li>
+    </ul>
+    <div class="outcome-box">
+      <strong>Outcomes:</strong> Manuscript in final rounds of review at <em>IEEE Transactions on Computers (TC)</em>.
+    </div>
+  </div>
+
+  <!-- Block 4 -->
+  <div class="research-block">
+    <span class="research-tag">Computer Architecture</span>
+    <h2>Reinforcement Learning-Based Cache Prefetcher Design</h2>
+    <div class="research-period">May 2024 – May 2025 · IIT Jodhpur (Advisors: Dr. Dip Sankar Banerjee &amp; Dr. Palash Das)</div>
+    <div class="research-desc">
+      <p>
+        Cache prefetching is critical for memory system performance. This project improves RL-based
+        prefetchers by refining the Q-value update process to increase cache coverage while reducing
+        pollution, and estimates hardware overhead through custom implementations.
+      </p>
+    </div>
+    <div class="contributions-title">Key Contributions</div>
+    <ul class="contributions">
+      <li>Modified existing RL-based Q-value update process (multi-step SARSA) to improve cache coverage and reduce cache pollution.</li>
+      <li>Developed hardware to estimate area and power overhead of the proposed prefetcher.</li>
+    </ul>
+    <div class="outcome-box">
+      <strong>Outcomes:</strong> Published in <em>IEEE Embedded Systems Letters (ESL)</em>, 2025.
+    </div>
+  </div>
+
+  <!-- Block 5 -->
+  <div class="research-block">
+    <span class="research-tag">Application</span>
+    <h2>Efficient Disease Prediction Using Vision AI on Blood Samples</h2>
+    <div class="research-period">Aug 2024 – Dec 2024 · IIT Jodhpur (Advisors: Dr. Hirshikesh &amp; Dr. Palash Das)</div>
+    <div class="research-desc">
+      <p>
+        An end-to-end application project combining fine-tuned ViT models for blood sample analysis with
+        a custom FPGA hardware accelerator for deployment.
+      </p>
+    </div>
+    <div class="contributions-title">Key Contributions</div>
+    <ul class="contributions">
+      <li>Fine-tuned a Vision Transformer on blood sample images for accurate disease detection.</li>
+      <li>Developed a custom hardware accelerator to deploy the algorithm on an FPGA.</li>
+    </ul>
+  </div>
+</main>
+
+<footer>
+  <p>Anadi Goyal · IIT Guwahati · anadigoyal05@gmail.com</p>
+</footer>
+</body>
+</html>
